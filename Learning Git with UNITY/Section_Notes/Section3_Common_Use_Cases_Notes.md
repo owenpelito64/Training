@@ -2,6 +2,3 @@
 
 **Stashing** - trying some stuff if it works you commit and if doesn't you stash it.
 **Branches** - a pointer to a commit.
-
-~~Sample branches~~
-~~Second change sample~~
