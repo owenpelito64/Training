@@ -11,3 +11,7 @@
 **Reverse Commit**
 
 - Remove a specific commit.
+
+<hr>
+
+- [ ] _review more on merging specially on a merge with conflicts_ :tada:
