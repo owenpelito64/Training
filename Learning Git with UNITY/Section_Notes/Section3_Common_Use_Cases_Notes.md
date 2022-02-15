@@ -1,1 +1,3 @@
-Stashing - trying some stuff if it works you commit and if doesn't you stash it.
+#Section 3 Notes
+
+**Stashing** - trying some stuff if it works you commit and if doesn't you stash it.
