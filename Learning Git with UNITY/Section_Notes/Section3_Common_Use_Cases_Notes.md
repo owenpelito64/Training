@@ -5,3 +5,5 @@
 **Reverse Commit** - Remove a specific commit.
 
 ~~Remove this One~~
+
+# this text should be still here after removing the past commit.
