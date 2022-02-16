@@ -9,21 +9,29 @@
 <hr>
 
 **Force Push**
-<br>
 
 - if you want to update the online repository on what we have locally. you can do force push !note this can be destructive be carefull when using.
   if you want to clean history use force push, In general don't do this as this mess up when you're collaborating with teams.
 
 **Pull Request**
-<br>
 
 - is when you want to contribute on someone else project.
+
+**Gist**
+
+- Single file tracking system. good for sharing single file.
+
+**Blame**
+
+- Shows who added , what is added , when is added in the history.
 
 **Market Place**
 
 - where you can get extentions and add ons in github.
 
 **Explore**
+
+- lets you explore repositories.
 
 <hr>
 
