@@ -24,3 +24,4 @@ Route::get('/', function () {
 //Route::get('/contact', [PostsController::class,'contact']);
 
 Route::get('/post/{id}/{name}/{password}', [PostsController::class,'show_post']);
+Route::get('/contact', [PostsController::class,'contact']);
