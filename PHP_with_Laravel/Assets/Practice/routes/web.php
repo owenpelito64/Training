@@ -3,6 +3,8 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostsController;
 use App\Models\Post;
+use App\Models\User;
+use App\Models\Role;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -154,3 +156,38 @@ Route::get('/contact', [PostsController::class,'contact']);
 //     return $post;
 // });
 
+
+/*
+|--------------------------------------------------------------------------
+| ELOQUENT RELATIONSHIP
+|--------------------------------------------------------------------------
+*/
+
+//One to One
+// Route::get('/user/{id}/post', function($id){
+//         return User::find($id)->user_post->title;
+// });
+
+//Inverse relation
+// Route::get('/post/{id}/user', function($id){
+//     return Post::find($id)->user->name;
+// });
+
+//One to many
+// Route::get('/post', function(){
+//     $user = User::find(1);
+//     foreach($user->user_posts as $post) {
+//        echo $post->title. "<br>";
+//     }
+// });
+
+
+//Many to Many relationship
+Route::get('/user/{id}/role', function($id){
+    $role = User::find($id);
+    foreach($role->roles as $role) {
+       echo $role->name. "<br>";
+    }
+
+   
+});
