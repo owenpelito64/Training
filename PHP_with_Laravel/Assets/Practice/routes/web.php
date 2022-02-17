@@ -96,10 +96,9 @@ Route::get('/contact', [PostsController::class,'contact']);
 // Route::get('/basicinsert', function(){
 
 //     $post = new Post;
-//     $post->title = 'Something New';
-//     $post->body = 'lorem';
+//     $post->title = 'Something New 2';
+//     $post->body = 'lorem 2';
 //     $post->save();
-
 //     return ('Created Successfully');
 // });
 
@@ -122,11 +121,36 @@ Route::get('/contact', [PostsController::class,'contact']);
 
 //     return ("DELETED");
 // });
-
 // Route::get('/delete2', function(){
+//  Post::destroy(7);   
+// });
 
-//  Post::destroy(7);
-     
-    
+
+//DELETING TO TRASH
+// Route::get('/softdelete', function(){
+//     Post::find(8)->delete();
+// });
+
+//READING DELETED FROM TRASH
+// Route::get('/readsoftdelete', function(){
+// $post = Post::withTrashed()-> where('id', 8)->get();
+// return $post;
+// });
+
+//RESTORE SOFTDELETED DATA
+// Route::get('/restore', function(){
+//     Post::withTrashed()->where('is_admin', 0)->restore();
+// });
+
+//FORCE DELETE DATA WITH SOFTDELETE ON IT.
+// Route::get('/forcedelete', function(){
+//     POST::onlyTrashed()->where('is_admin', 0)->forceDelete();
+// });
+
+
+// Route::get('/showalldata', function(){
+
+//     $post = POST::where('is_admin', 0)->where('id', '>' , 9)->get(['title','body']);
+//     return $post;
 // });
 
