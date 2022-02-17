@@ -28,7 +28,8 @@ return new class extends Migration
     public function down()
     {
         Schema::table('post', function (Blueprint $table) {
-            
+         $table->dropColumn('is_admin');             
+       
         });
     }
 };

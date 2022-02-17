@@ -12,7 +12,7 @@
         @if (count($people))
             <ul>
 
-    <!--   list Every person on the people data until 0      -->
+<!--   list Every person on the people data until 0      -->
             @foreach ($people as $person)
                 <li>{{$person}}</li>
             @endforeach
