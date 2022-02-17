@@ -5,6 +5,7 @@ use App\Http\Controllers\PostsController;
 use App\Models\Post;
 use App\Models\User;
 use App\Models\Role;
+use App\Models\Country;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -183,11 +184,25 @@ Route::get('/contact', [PostsController::class,'contact']);
 
 
 //Many to Many relationship
-Route::get('/user/{id}/role', function($id){
-    $role = User::find($id);
-    foreach($role->roles as $role) {
-       echo $role->name. "<br>";
-    }
+// Route::get('/user/{id}/role', function($id){
+//     $role = User::find($id);
+//     foreach($role->roles as $role) {
+//        echo $role->name. "<br>";
+//     }
+// });
 
-   
+// Accessing the intermediate table/pivot
+// Route::get('user/pivot', function(){
+//   $user =  User::find(1);
+//   echo $user->roles;
+// });
+
+
+Route::get('/user/country', function(){
+    
+   $country = Country::find(4);
+           
+   foreach($country->posts as $post) {
+       return $post->title;
+   } 
 });
