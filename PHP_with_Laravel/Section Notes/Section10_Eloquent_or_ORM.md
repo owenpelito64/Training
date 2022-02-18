@@ -7,7 +7,7 @@
 
 > you may have noticed that we did not tell Eloquent which database table corresponds to our Flight model. By convention, the "snake case", plural name of the class will be used as the table name unless another name is explicitly specified. So, in this case, Eloquent will assume the Flight model stores records in the flights table, while an AirTrafficController model would store records in an air_traffic_controllers table.
 
-```
+```php
 
 {
     /**
@@ -24,7 +24,7 @@
 
 > Eloquent will also assume that each model's corresponding database table has a primary key column named id. If necessary, you may define a protected $primaryKey property on your model to specify a different column that serves as your model's primary key:
 
-```
+```php
 {
     /**
      * The primary key associated with the table.
@@ -41,7 +41,7 @@
 >
 > > To enable soft deletes for a model, add the Illuminate\Database\Eloquent\SoftDeletes trait to the model:
 
-```
+```php
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Flight extends Model
