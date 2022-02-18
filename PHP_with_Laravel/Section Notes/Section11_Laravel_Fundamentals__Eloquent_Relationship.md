@@ -120,7 +120,8 @@ $imageable = $image->imageable;
 ```
 
 <hr>
-> [Refer to this ELOQUENT Relationship documentation](https://laravel.com/docs/9.x/eloquent-relationships)
+
+[Refer to this ELOQUENT Relationship documentation](https://laravel.com/docs/9.x/eloquent-relationships)
 
 ### TO DO
 
