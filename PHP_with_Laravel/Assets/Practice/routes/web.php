@@ -198,11 +198,36 @@ Route::get('/contact', [PostsController::class,'contact']);
 // });
 
 
-Route::get('/user/country', function(){
-    
-   $country = Country::find(4);
-           
-   foreach($country->posts as $post) {
-       return $post->title;
-   } 
+// Route::get('/user/country', function(){
+//    $country = Country::find(4);       
+//    foreach($country->posts as $post) {
+//        return $post->title;
+//    } 
+// });
+
+
+//Polymorphic relations
+
+Route::get('user/photos', function(){
+   
+    $user = User::find(1);
+
+    foreach ($user->photos as $photo) {
+        
+        return $photo->path;
+                
+    }
+ 
+});
+
+Route::get('post/{id}/photos', function($id){
+   
+    $post = Post::find($id);
+
+    foreach ($post->photos as $photo) {
+        
+        echo $photo->path . "<br>";
+                
+    }
+ 
 });
