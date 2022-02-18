@@ -7,7 +7,7 @@
 
 ### Simple Activity
 
-```tinker
+```php
 
 $ php artisan tinker
 Psy Shell v0.11.1 (PHP 8.1.1 — cli) by Justin Hileman
@@ -103,4 +103,4 @@ PHP Error:  Call to undefined function App\Models\find() in Psy Shell code on li
 
 [Refer to this ELOQUENT Relationship documentation](https://laravel.com/docs/9.x/eloquent-relationships)
 
-### TO DO
+
