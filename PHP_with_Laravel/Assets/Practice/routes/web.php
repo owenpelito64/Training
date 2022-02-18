@@ -6,6 +6,8 @@ use App\Models\Post;
 use App\Models\User;
 use App\Models\Role;
 use App\Models\Country;
+use App\Models\Photo;
+use App\Models\Tag;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -207,27 +209,34 @@ Route::get('/contact', [PostsController::class,'contact']);
 
 
 //Polymorphic relations
-
-Route::get('user/photos', function(){
+// Route::get('user/photos', function(){
+//     $user = User::find(1);
+//     foreach ($user->photos as $photo) {    
+//         return $photo->path;            
+//     }
+// });
+// Route::get('post/{id}/photos', function($id){   
+//     $post = Post::find($id);
+//     foreach ($post->photos as $photo) {       
+//         echo $photo->path . "<br>";               
+//     }
+// });
+// Route::get('photo/{id}/post', function($id){
+//       $photo =  Photo::findOrFail($id);
+//       return $photo->imageable;
+// });
+//Many to Many Polymorphic relation  
+// Route::get('video/{id}', function($id){
+//       $post =  Tag::findOrFail($id);
+//       foreach($post->videos as $video){
+//        echo $video;
+//       }
    
-    $user = User::find(1);
+// });
 
-    foreach ($user->photos as $photo) {
-        
-        return $photo->path;
-                
+Route::get('tag/post/{id}', function($id){
+    $tag =  Tag::findOrFail($id);
+    foreach($tag->post as $post){
+     echo $post->title;
     }
- 
-});
-
-Route::get('post/{id}/photos', function($id){
-   
-    $post = Post::find($id);
-
-    foreach ($post->photos as $photo) {
-        
-        echo $photo->path . "<br>";
-                
-    }
- 
 });
