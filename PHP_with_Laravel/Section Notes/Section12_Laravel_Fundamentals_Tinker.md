@@ -101,6 +101,4 @@ PHP Error:  Call to undefined function App\Models\find() in Psy Shell code on li
 
 <hr>
 
-[Refer to this ELOQUENT Relationship documentation](https://laravel.com/docs/9.x/eloquent-relationships)
-
-
+[Refer to this Tinker documentation](https://laravel.com/docs/9.x/artisan#tinker)
