@@ -25,9 +25,9 @@ Route::get('/create', function(){
 
 });
 
-
+ //READ 
 Route::get('/read', function(){
-    //READ AND UPDATE
+   
         $post = Post::findOrFail(1);
 
 
@@ -59,7 +59,7 @@ Route::get('/read', function(){
 
         });
 
-
+//Delete
         Route::get('/delete', function(){
             //Delete
                 $post = Post::findOrFail(2);
