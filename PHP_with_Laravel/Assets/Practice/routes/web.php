@@ -8,6 +8,7 @@ use App\Models\Role;
 use App\Models\Country;
 use App\Models\Photo;
 use App\Models\Tag;
+use Carbon\Carbon;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -252,6 +253,36 @@ Route::get('/', function () {
 */
 
 
-Route::resource('/post',PostsController::class);
+// Route::resource('/post',PostsController::class);
 
+
+
+Route::get('/dates', function(){
+    $date = new DateTime('+1 week');
+
+    echo $date->format('m-d-y');
+    echo '<br>';
+    echo Carbon::now()->addDays(10)->diffForHumans();
+    echo '<br>';
+    echo Carbon::now()->subMonths(5)->diffForHumans();
+    echo '<br>';
+    echo Carbon::now()->yesterday()->diffForHumans();
+});
+
+
+Route::get('/getname', function(){
+
+    $user = User::find(1);
+
+    echo $user->name;
+});
+
+Route::get('/setname', function(){
+
+    $user = User::find(1);
+
+     $user->name = "Shenny";
+
+     $user->save();
+});
 
