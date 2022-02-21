@@ -17,7 +17,10 @@
 
 ##### Commands
 
+```php
 - {{}} use this instead of <?php echo " ">
+
+```
 
 [Refer to this View documentation if ever get lost/stuck](https://laravel.com/docs/9.x/views)
 

@@ -2,7 +2,7 @@
 
 **CRUD**
 
-```
+```php
 
  CREATE
    Route::get('/insert', function(){

@@ -14,4 +14,4 @@
 
 <hr>
 
-- [ ] _review more on merging specially on a merge with conflicts_ :tada:
+- [x] _review more on merging specially on a merge with conflicts_ :tada:

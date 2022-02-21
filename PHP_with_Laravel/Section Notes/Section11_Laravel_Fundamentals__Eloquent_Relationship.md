@@ -125,4 +125,4 @@ $imageable = $image->imageable;
 
 ### TO DO
 
-- [ ] PRACTICE MORE OF ELOQUENT RELATIONS
+- [x] PRACTICE MORE OF ELOQUENT RELATIONS

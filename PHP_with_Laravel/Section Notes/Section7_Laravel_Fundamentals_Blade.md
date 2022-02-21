@@ -16,7 +16,7 @@
 
 ##### If statements
 
-```
+```php
 If Statements
   @if (count($records) === 1)
     I have one record!
@@ -34,7 +34,7 @@ You are not signed in.
 
 ##### Loops
 
-```
+```php
 @for ($i = 0; $i < 10; $i++)
   The current value is {{ $i }}
   @endfor
@@ -59,8 +59,10 @@ You are not signed in.
 
 ###### Comments
 
-```
+```php
+
  {{-- This comment will not be in the rendered HTML --}}
+
 ```
 
 [Refer to this Blade template documentation if ever get lost/stuck](https://laravel.com/docs/5.0/templates)

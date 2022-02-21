@@ -253,36 +253,36 @@ Route::get('/', function () {
 */
 
 
-// Route::resource('/post',PostsController::class);
+Route::resource('/post',PostsController::class);
 
 
 
-Route::get('/dates', function(){
-    $date = new DateTime('+1 week');
+// Route::get('/dates', function(){
+//     $date = new DateTime('+1 week');
 
-    echo $date->format('m-d-y');
-    echo '<br>';
-    echo Carbon::now()->addDays(10)->diffForHumans();
-    echo '<br>';
-    echo Carbon::now()->subMonths(5)->diffForHumans();
-    echo '<br>';
-    echo Carbon::now()->yesterday()->diffForHumans();
-});
+//     echo $date->format('m-d-y');
+//     echo '<br>';
+//     echo Carbon::now()->addDays(10)->diffForHumans();
+//     echo '<br>';
+//     echo Carbon::now()->subMonths(5)->diffForHumans();
+//     echo '<br>';
+//     echo Carbon::now()->yesterday()->diffForHumans();
+// });
 
 
-Route::get('/getname', function(){
+// Route::get('/getname', function(){
 
-    $user = User::find(1);
+//     $user = User::find(1);
 
-    echo $user->name;
-});
+//     echo $user->name;
+// });
 
-Route::get('/setname', function(){
+// Route::get('/setname', function(){
 
-    $user = User::find(1);
+//     $user = User::find(1);
 
-     $user->name = "Shenny";
+//      $user->name = "Shenny";
 
-     $user->save();
-});
+//      $user->save();
+// });
 

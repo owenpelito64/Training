@@ -55,10 +55,13 @@ You can't do on GUI
 
 ##### commands
 
+```
+
     $git status  :: list which files are staged, unstaged, and untracked
     $git commit -m "message" :: commits on the repo with the message using terminal
     $git diff "Commit Sha" --stat *"name of file you only want to see" :: to check Diff when Refactoring codes
     $git lfs migrate :: to push 100mb files on git hub.
+```
 
 <object data="https://wac-cdn.atlassian.com/dam/jcr:e7e22f25-bba2-4ef1-a197-53f46b6df4a5/SWTM-2088_Atlassian-Git-Cheatsheet.pdf?cdnVersion=214" type="application/pdf" >
     <embed src="https://wac-cdn.atlassian.com/dam/jcr:e7e22f25-bba2-4ef1-a197-53f46b6df4a5/SWTM-2088_Atlassian-Git-Cheatsheet.pdf?cdnVersion=214">

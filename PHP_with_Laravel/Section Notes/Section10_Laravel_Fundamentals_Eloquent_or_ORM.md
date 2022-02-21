@@ -41,7 +41,7 @@
 >
 > > To enable soft deletes for a model, add the Illuminate\Database\Eloquent\SoftDeletes trait to the model:
 
-```
+```php
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Flight extends Model

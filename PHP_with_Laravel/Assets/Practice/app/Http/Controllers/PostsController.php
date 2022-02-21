@@ -14,8 +14,12 @@ class PostsController extends Controller
      */
     public function index()
     {
-      $posts = Post::all();
-    return view('posters.index', compact('posts'));
+    //   $posts = Post::all();
+    // return view('posters.index', compact('posts'));
+
+
+
+
     }
 
     /**
@@ -36,9 +40,9 @@ class PostsController extends Controller
      */
     public function store(Request $request)
     {
-        Post::create($request->all());
+        // Post::create($request->all());
         
-        return redirect('/post');
+        // return redirect('/post');
 
 
         // return $request->get('title');
@@ -49,7 +53,11 @@ class PostsController extends Controller
         // $post->title =  $request->title;
         // $post->save()
 
+        $file =  $request->file('fileToUpload');
 
+        
+
+        return $file;
     }
 
     /**
@@ -60,8 +68,8 @@ class PostsController extends Controller
      */
     public function show($id)
     {
-        $posts = Post::findOrFail($id);
-        return view('posters.index', compact('posts'));
+        // $posts = Post::findOrFail($id);
+        // return view('posters.index', compact('posts'));
     }
 
     /**
@@ -72,8 +80,8 @@ class PostsController extends Controller
      */
     public function edit($id)
     {
-        $post = Post::findOrFail($id);
-        return view('posters.edit', compact('post'));
+        // $post = Post::findOrFail($id);
+        // return view('posters.edit', compact('post'));
     }
 
     /**
@@ -85,11 +93,11 @@ class PostsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $post = Post::findOrFail($id);
+        // $post = Post::findOrFail($id);
 
-        $post->update($request->all());
+        // $post->update($request->all());
 
-        return redirect('post');
+        // return redirect('post');
     }
 
     /**
@@ -102,8 +110,8 @@ class PostsController extends Controller
    
     public function destroy($id)
     {
-        $post = Post::whereId($id)->delete();
-        return redirect('post');
+        // $post = Post::whereId($id)->delete();
+        // return redirect('post');
     }
 
 
@@ -113,11 +121,11 @@ class PostsController extends Controller
     public function contact()
     {
 
-        $people = ['James', 'Jose' , 'Peter' , 'Maria'];
+        // $people = ['James', 'Jose' , 'Peter' , 'Maria'];
 
 
 
-        return view('contact' , compact('people'));
+        // return view('contact' , compact('people'));
     }
 
     
@@ -133,7 +141,7 @@ class PostsController extends Controller
     public function show_post($id,$name,$password)
 
     {
-        return view('post',compact('id','name','password'));
+        // return view('post',compact('id','name','password'));
     }
 
 }
