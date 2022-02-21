@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 
 
@@ -22,4 +22,4 @@
 
 <script>alert('This is an alert')</script>
 
-@endsection
+@endsection --}}

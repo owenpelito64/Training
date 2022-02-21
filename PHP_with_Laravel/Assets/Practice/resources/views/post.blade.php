@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app')
 
 
 
@@ -7,4 +7,4 @@
 <h1>This Post here {{$id}} {{$name}} {{$password}} </h1>
 @endsection
     
-
+ --}}

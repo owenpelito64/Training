@@ -29,8 +29,8 @@ Route::get('/', function () {
 //Route::resource('post', PostsController::class);
 //Route::get('/contact', [PostsController::class,'contact']);
 
-Route::get('/post/{id}/{name}/{password}', [PostsController::class,'show_post']);
-Route::get('/contact', [PostsController::class,'contact']);
+// Route::get('/post/{id}/{name}/{password}', [PostsController::class,'show_post']);
+// Route::get('/contact', [PostsController::class,'contact']);
 
 // 
 
@@ -234,9 +234,24 @@ Route::get('/contact', [PostsController::class,'contact']);
    
 // });
 
-Route::get('tag/post/{id}', function($id){
-    $tag =  Tag::findOrFail($id);
-    foreach($tag->post as $post){
-     echo $post->title;
-    }
-});
+// Route::get('tag/post/{id}', function($id){
+//     $tag =  Tag::findOrFail($id);
+//     foreach($tag->post as $post){
+//      echo $post->title;
+//     }
+// });
+
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| CRUD APP USING FORM
+|--------------------------------------------------------------------------
+*/
+
+
+Route::resource('/post',PostsController::class);
+
+
