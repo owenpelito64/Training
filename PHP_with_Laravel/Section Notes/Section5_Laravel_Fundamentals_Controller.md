@@ -37,5 +37,4 @@
 
 ##### TODO
 
-
-- [ ] Review more about Route Parameters
+- [x] Review more about Route Parameters
