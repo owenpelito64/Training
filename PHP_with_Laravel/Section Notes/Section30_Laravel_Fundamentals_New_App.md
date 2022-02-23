@@ -1,6 +1,8 @@
 # Section 30 Creating New App
 
-**WORK FLOW**
+**Mutators**
+
+- **WORK FLOW**
 
 - create proj setup template setup database setup Authentication
 
@@ -95,7 +97,31 @@ class DatabaseSeeder extends Seeder
 
 **CRUD WORKFLOW**
 
-- [ ] CREATE
+- [x] CREATE
+
+```php
+
+
+    public function store(Request $request)
+    {
+
+       $input = $request->validate([
+            'title' => 'required',
+            'post_image' => 'required',
+            'body' => 'required',
+
+        ]);
+
+        auth()->user()->posts()->create($input);
+        session()->flash('post-create-message', 'Post was Created');
+        return redirect()->route('post.view');
+
+
+    }
+
+
+```
+
 - [x] READ
 
 - pass the post model to home controller to pass in Post data
@@ -164,4 +190,16 @@ class HomeController extends Controller
 ```
 
 - [ ] UPDATE
-- [ ] DELETE
+- [x] DELETE
+
+```php
+
+    public function destroy(Post $post)
+    {
+       $post->delete();
+       Session::flash('message', 'Post was deleted');
+       return back();
+
+
+    }
+```

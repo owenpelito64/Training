@@ -3,6 +3,12 @@
  
 
     @section('content')
+
+    <div class="col-6">
+
+       
+
+      
         <h1>Create</h1>
 
 
@@ -43,5 +49,10 @@
                </button>
             
         </form>
+
+
+
+
+    </div>
     @endsection
 </x-admin_master>

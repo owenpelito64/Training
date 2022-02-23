@@ -18,12 +18,8 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     
-      $user = User::factory(2)
+      $user = User::factory(3)
         ->has(Post::factory())
         ->create();
-      
-   
-        
-       
     }
 }
