@@ -60,6 +60,30 @@ class PostController extends Controller
 
        
     }
+
+    public function edit(Post $post)
+    {       
+        return view('admin.posts.edit', ['post'=>$post]);
+       
+    
+    }
+
+
+    
+    public function update(Post $post, Request $request)
+    {       
+     
+       
+        $input = request()->validate([
+            'title' => 'required',
+            'post_image' => 'file',
+            'body' => 'required',
+            
+        ]);
+           $post -> update($request->all());
+        session()->flash('post-edit-message', 'Post was edited');
+        return redirect()->route('post.view');
+    }
 }
 
 

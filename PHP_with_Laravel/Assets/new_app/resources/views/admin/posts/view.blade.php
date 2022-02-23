@@ -15,8 +15,8 @@
     </div>
       @elseif(session('post-create-message'))
       <div class="alert alert-success">{{Session::get('post-create-message')}}</div>
-   
-   
+      @elseif(session('post-edit-message'))
+      <div class="alert alert-success">{{Session::get('post-edit-message')}}</div>
   
 
     @endif
@@ -37,6 +37,7 @@
                   <th>Created at</th>
                   <th>Updated at</th>
                   <th>Delete</th>
+                  <th>Edit</th>
                 </tr>
               </thead>
               <tfoot>
@@ -47,6 +48,7 @@
                   <th>Image</th>
                   <th>Created at</th>
                   <th>Delete</th>
+                  <th>Edit</th>
                 </tr>
               </tfoot>
               <tbody>
@@ -66,7 +68,14 @@
                       <button class="btn btn-danger">Delete</button></td>
                     </form>
                     
-                    
+                  
+
+                     
+      
+                  </td>
+                  <td>
+                    <a href="{{route('post.edit', $post->id)}}"> <button class="btn btn-info">Edit</button></a>
+                  </td>
                   
                 </tr>
                 @endforeach
