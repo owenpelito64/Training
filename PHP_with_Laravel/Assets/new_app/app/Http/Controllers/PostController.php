@@ -19,7 +19,7 @@ class PostController extends Controller
 
     public function view()
     {
-        $posts = Post::all();
+        $posts = auth()->user()->posts;
         return view('admin.posts.view', ['posts'=>$posts]);
     }
 
@@ -63,6 +63,7 @@ class PostController extends Controller
 
     public function edit(Post $post)
     {       
+        $this->authorize('update', $post);
         return view('admin.posts.edit', ['post'=>$post]);
        
     
@@ -80,6 +81,8 @@ class PostController extends Controller
             'body' => 'required',
             
         ]);
+
+        $this->authorize('update', $post);
            $post -> update($request->all());
         session()->flash('post-edit-message', 'Post was edited');
         return redirect()->route('post.view');
