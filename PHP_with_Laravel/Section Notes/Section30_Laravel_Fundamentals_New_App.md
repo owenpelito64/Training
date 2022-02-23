@@ -4,9 +4,92 @@
 
 - create proj setup template setup database setup Authentication
 
+**Middleware Route**
+
+- Gets Authentication before proceding to route
+
+```php
+
+ Route::middleware('auth')->group(function(){
+
+    Route::get('/admin', [App\Http\Controllers\AdminsController::class, 'index'])->name('admin.index');
+
+```
+
+});
+
+**Factory with relation**
+
 ```
 
 $ php artisan make:factory PostFactory --model=Post
+
+```
+
+```php
+
+<?php
+
+namespace Database\Factories;
+
+use Illuminate\Database\Eloquent\Factories\Factory;
+
+/**
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Post>
+ */
+class PostFactory extends Factory
+{
+    /**
+     * Define the model's default state.
+     *
+     * @return array
+     */
+    public function definition()
+    {
+        return [
+
+            'title' => $this->faker->sentence,
+            'body' => $this->faker->sentence,
+            'post_image' => $this->faker->imageUrl('900','300'),
+            //
+        ];
+    }
+}
+
+
+```
+
+```php
+
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use Illuminate\Database\Seeder;
+
+use App\Models\Post;
+use App\Models\User;
+
+class DatabaseSeeder extends Seeder
+{
+    /**
+     * Seed the application's database.
+     *
+     * @return void
+     */
+    public function run()
+    {
+
+      $user = User::factory(2)
+        ->has(Post::factory())
+        ->create();
+
+
+
+
+    }
+}
 
 ```
 

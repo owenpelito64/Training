@@ -38,13 +38,17 @@
 
       <!-- Divider -->
       <hr class="sidebar-divider my-0">
-
-      <!-- Nav Item - Dashboard -->
       <li class="nav-item">
-        <a class="nav-link" href="index.html">
+        <a class="nav-link" href="{{route('admin.index')}}">
           <i class="fas fa-fw fa-tachometer-alt"></i>
           <span>Dashboard</span></a>
       </li>
+
+      <!-- Nav Item - Dashboard -->
+
+      <x-admin_sidebar_posts_links>
+
+      </x-admin_sidebar_posts_links>
 
       <!-- Divider -->
       <hr class="sidebar-divider">
@@ -330,9 +334,15 @@
 
         <!-- Begin Page Content -->
         <div class="container-fluid">
+          <div class="row">
+            <div class="col-6">
 
+              @yield('content')
+
+            </div>
+          </div>
           <!-- Page Heading -->
-          @yield('content')
+        
 
         </div>
         <!-- /.container-fluid -->

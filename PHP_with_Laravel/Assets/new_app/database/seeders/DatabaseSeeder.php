@@ -18,19 +18,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
     
-      $user = User::factory(3)
+      $user = User::factory(2)
         ->has(Post::factory())
         ->create();
       
    
-            
-        //     $user->posts()->save(factory('App\Models\Post')->make());
-
-        // });
-
-        // \App\Models\User::factory(10)->
-        // has(\App\Models\Todo::factory()->count(3))
-        // ->create();
+        
        
     }
 }
