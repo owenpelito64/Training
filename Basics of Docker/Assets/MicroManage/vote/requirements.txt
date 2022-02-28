@@ -1,0 +1,21 @@
+# Updates:
+#   Nov 2019: Update Flask to a more recent version
+Flask==1.1.1
+
+# Hello. This is Nick from the future (Feb 2022 to be exact). A new addition
+# had to be made below to fix an issue related to the version of Flask
+# that we use. A new major version of both itsdangerous and markupsafe came up
+# that are no longer backwards compatible with our version of Flask.
+#
+# These packages are both dependencies of Flask and now we're locking them to
+# a specific version that works with our version of Flask.
+itsdangerous==1.1.0
+markupsafe==1.1.1
+
+# Updates:
+#   Nov 2019: Lock version to avoid potential future versioning issues
+Redis==3.3.11
+
+# Updates:
+#   Nov 2019: Lock version to avoid potential future versioning issues
+gunicorn==20.0.4
