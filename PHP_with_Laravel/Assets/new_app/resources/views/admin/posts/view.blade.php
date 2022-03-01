@@ -36,21 +36,12 @@
                   <th>Image</th>
                   <th>Created at</th>
                   <th>Updated at</th>
-                  <th>Delete</th>
                   <th>Edit</th>
+                  <th>Delete</th>
+                
                 </tr>
               </thead>
-              <tfoot>
-                <tr>
-                  <th>Id</th>
-                  <th>Owner</th>
-                  <th>Title</th>
-                  <th>Image</th>
-                  <th>Created at</th>
-                  <th>Delete</th>
-                  <th>Edit</th>
-                </tr>
-              </tfoot>
+           
               <tbody>
 
                 @foreach ($posts as $post)
@@ -61,6 +52,9 @@
                   <td><img height="40px" src="{{$post->post_image}}" alt=""></td>
                   <td>{{$post->created_at}}</td>
                   <td>{{$post->updated_at}}</td>
+                  <td>
+                    <a href="{{route('post.edit', $post->id)}}"> <button class="btn btn-info">Edit</button></a>
+                  </td>
                   <td>
                     <form method="post" action="{{route('post.destroy', $post->id)}}">
                       @csrf
@@ -73,9 +67,7 @@
                      
       
                   </td>
-                  <td>
-                    <a href="{{route('post.edit', $post->id)}}"> <button class="btn btn-info">Edit</button></a>
-                  </td>
+               
                   
                 </tr>
                 @endforeach

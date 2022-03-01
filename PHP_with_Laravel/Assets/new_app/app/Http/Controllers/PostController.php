@@ -19,7 +19,9 @@ class PostController extends Controller
 
     public function view()
     {
-        $posts = auth()->user()->posts;
+        $posts=Post::get();
+        // $posts = auth()->user()->posts;
+        
         return view('admin.posts.view', ['posts'=>$posts]);
     }
 
@@ -54,6 +56,7 @@ class PostController extends Controller
 
     public function destroy(Post $post)
     {
+        $this->authorize('delete', $post);
        $post->delete();
        Session::flash('message', 'Post was deleted');
        return back();

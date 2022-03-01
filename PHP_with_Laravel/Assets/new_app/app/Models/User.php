@@ -8,6 +8,8 @@ use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
 use App\Models\Post;
+use App\Models\Role;
+use App\Models\Permission;
 
 class User extends Authenticatable
 {
@@ -20,7 +22,9 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
+        'avatar',
         'password',
     ];
 
@@ -47,5 +51,31 @@ class User extends Authenticatable
 
         return $this->hasMany(Post::class);
 
+    }
+
+    public function permissions(){
+
+        return $this->belongsToMany(Permission::class);
+
+    }
+    public function roles(){
+
+        return $this->belongsToMany(Role::class);
+
+    }
+
+    // public function setPasswordAttribute($value){
+        
+    //     $this->attribute['password'] = bcrypt($value);
+    // }
+
+    public function userHasRole($role_name){
+    
+        foreach($this->roles as $role){
+
+            if($role_name == $role->name);
+
+            return true;
+        }
     }
 }
